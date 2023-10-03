@@ -5,16 +5,26 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Clase principal de la aplicación Spring Boot para consumir servicios web relacionados con cursos de formación.
+ * 
+ * @author Jose Manuel Ruiz Rodriguez
+ */
 @SpringBootApplication
 public class FirstSpring5CourseCrudJpaClientApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FirstSpring5CourseCrudJpaClientApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FirstSpring5CourseCrudJpaClientApplication.class, args);
+    }
 
-	@Bean
-	public RestTemplate template()
-	{
-		return new RestTemplate();
-	}
+    /**
+     * Configuración de un bean RestTemplate para realizar solicitudes HTTP a servicios web.
+     * 
+     * @return Una instancia de RestTemplate.
+     */
+    @Bean
+    public RestTemplate template()
+    {
+        return new RestTemplate();
+    }
 }

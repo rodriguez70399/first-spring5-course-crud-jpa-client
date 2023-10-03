@@ -10,6 +10,11 @@ import org.springframework.web.client.RestTemplate;
 import es.jmruirod.firstspring5coursecrudjpaclient.model.Course;
 import es.jmruirod.firstspring5coursecrudjpaclient.model.Training;
 
+/**
+ * Implementación de la interfaz {@link TrainingServiceInterface} que proporciona servicios para la gestión de cursos de formación.
+ * 
+ * @author Jose Manuel Ruiz Rodriguez
+ */
 @Service
 public class TrainingServiceInterfaceImplemented implements TrainingServiceInterface
 {
@@ -18,6 +23,11 @@ public class TrainingServiceInterfaceImplemented implements TrainingServiceInter
 
     private String url = "http://localhost:8080/";
 
+    /**
+     * Obtiene una lista de todos los cursos de formación y la convierte en una lista de objetos Training.
+     * 
+     * @return Lista de objetos Training.
+     */
     @Override
     public List<Training> getAll() 
     {
@@ -25,6 +35,11 @@ public class TrainingServiceInterfaceImplemented implements TrainingServiceInter
         return Training.getTrainingFromCourseList(courseList);
     }
 
+    /**
+     * Crea un nuevo curso de formación y lo agrega si no existe previamente.
+     * 
+     * @param trainingToCreate El curso de formación a crear y agregar.
+     */
     @Override
     public void create(Training trainingToCreate) 
     {
